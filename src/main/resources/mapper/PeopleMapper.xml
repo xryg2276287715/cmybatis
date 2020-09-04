@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="pers.study.cmybatis.mapper.PeopleMapper">
+<mapper namespace="pers.study.cmybatis.mapper.PeopleMapperExt">
   <resultMap id="BaseResultMap" type="pers.study.cmybatis.model.People">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="first_name" jdbcType="VARCHAR" property="firstName" />

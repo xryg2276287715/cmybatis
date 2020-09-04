@@ -13,7 +13,12 @@ public class PeopleService {
     @Resource
     PeopleMapperExt peopleMapperExt;
 
-    public People queryByIdName(int id){
+    public People queryById(int id){
       return  peopleMapperExt.selectByPrimaryKey(id);
     }
+
+    public People queryByFName(String firstName){
+        return  peopleMapperExt.selectByFirstName(firstName);
+    }
+
 }
