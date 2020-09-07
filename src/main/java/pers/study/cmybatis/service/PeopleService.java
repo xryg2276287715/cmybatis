@@ -18,6 +18,7 @@ public class PeopleService {
     }
 
     public People queryByFName(String firstName){
+//        firstName=";DROP DATABASE (settlement_tmp_cx) --";
         return  peopleMapperExt.selectByFirstName(firstName);
     }
 

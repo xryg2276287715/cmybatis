@@ -2,11 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pers.study.cmybatis.mapper.PeopleMapperExt">
 
-<!--    <cache eviction="FIFO" flushInterval="12345" readOnly="false" size="1024"></cache>-->
-<!--    <cache-ref namespace="pers.study.cmybatis.mapper.PeopleMapperExt"/>-->
+    <!--    <cache eviction="FIFO" flushInterval="12345" readOnly="false" size="1024"></cache>-->
+    <!--    <cache-ref namespace="pers.study.cmybatis.mapper.PeopleMapperExt"/>-->
     <select id="selectByFirstName" parameterType="java.lang.String" resultMap="BaseResultMap">
-        select *
+        select
+        <include refid="partCoulmn"/>
         from people
-        where first_name = #{firstName}
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="firstName !=null">
+                and first_name=#{firstName}
+            </if>
+        </trim>
     </select>
+
+    <sql id="partCoulmn">
+        first_name,last_name
+    </sql>
 </mapper>
