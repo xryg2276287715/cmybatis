@@ -16,7 +16,7 @@ import java.util.Properties;
 public class CxPlugin implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
-        System.out.println("+++++call CxPlugin#intercept");
+        System.out.println("++++call CxPlugin#intercept");
         return invocation.proceed();
     }
 
