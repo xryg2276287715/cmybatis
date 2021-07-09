@@ -52,4 +52,15 @@ public class People {
     public void setGender(String gender) {
         this.gender = gender == null ? null : gender.trim();
     }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dob=" + dob +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
 }
